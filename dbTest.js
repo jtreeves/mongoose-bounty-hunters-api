@@ -10,7 +10,16 @@ models.Bounty.create({
     client: 'Walt Disney',
     reward: 1000,
     ship: 'Goodship Lollypop',
-    hunters: ['Bugs Bunny', 'Donald Duck'],
+    hunters: [
+        {
+            name: 'Bugs Bunny',
+            origin: 'Earth'
+        },
+        {
+            name: 'Donald Duck',
+            origin: 'Earth'
+        }
+    ],
     captured: false,
     lastSeen: '1984'
 })
