@@ -1,6 +1,9 @@
 mongoose = require('mongoose')
 
-const hunterSchema = require('./Hunter').hunterSchema
+const hunterSchema = new mongoose.Schema({
+    name: String,
+    origin: String
+})
 
 const bountySchema = new mongoose.Schema({
     name: {
