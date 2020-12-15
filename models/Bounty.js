@@ -10,3 +10,5 @@ const bountySchema = new mongoose.Schema({
     captured: Boolean,
     lastSeen: String
 })
+
+module.exports = mongoose.model('bounties', bountySchema)
