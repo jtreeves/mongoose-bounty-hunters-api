@@ -1,15 +1,26 @@
 const router = require('express').Router()
 
+const models = require('../models')
+
 router.get('/', (req, res) => {
-    res.send('hello from GET /bounties')
+    models.Bounty.find().then((foundBounties) => {
+        res.status(200).json({bounties: foundBounties})
+    })
 })
 
 router.get('/:id', (req, res) => {
-    res.send('hello from GET /bounties/:id')
+    models.Bounty.find({_id: req.params.id}).then((bounty) => {
+        res.status(200).json({bounty})
+    })
 })
 
 router.post('/', (req, res) => {
-    res.send('hellow from POST /bounties')
+    models.Bounty
+        .create(req.body)
+        .then((bounty) => {
+            res.status(201).json({bounty})
+        })
+        .catch((err) => {res.send(err)})
 })
 
 router.put('/:id', (req, res) => {
