@@ -12,5 +12,9 @@ models.Bounty.create({
     ship: 'Goodship Lollypop',
     hunters: ['Bugs Bunny', 'Donald Duck'],
     captured: false,
-    lastSeen: '1933'
+    lastSeen: '1984'
+})
+
+models.Bounty.deleteMany().then(() => {
+    console.log('done!')
 })

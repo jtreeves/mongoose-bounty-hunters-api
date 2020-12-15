@@ -1,13 +1,28 @@
 mongoose = require('mongoose')
 
 const bountySchema = new mongoose.Schema({
-    name: String,
-    wantedFor: String,
+    name: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    wantedFor: {
+        type: String,
+        minlength: 10,
+        maxlength: 200
+    },
     client: String,
-    reward: Number,
+    reward: {
+        type: Number,
+        min: 1000,
+        max: 1000000000000
+    },
     ship: String,
     hunters: [String],
-    captured: Boolean,
+    captured: {
+        type: Boolean,
+        default: false
+    },
     lastSeen: String
 })
 
