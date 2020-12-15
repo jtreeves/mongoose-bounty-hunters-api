@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
-const env = require('dotenv')
+require('dotenv').config()
+
+const models = require('./models')
 
 app.get('/', (req, res) => {
     res.send('hello from root')
