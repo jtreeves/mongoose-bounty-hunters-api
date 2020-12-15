@@ -5,7 +5,7 @@ require('dotenv').config()
 const models = require('./models')
 
 app.get('/', (req, res) => {
-    res.send('hello from root')
+    res.send('Root page')
 })
 
 const PORT = process.env.PORT || 3000
