@@ -1,5 +1,7 @@
 mongoose = require('mongoose')
 
+const hunterSchema = require('./Hunter').hunterSchema
+
 const bountySchema = new mongoose.Schema({
     name: {
         type: String,
@@ -15,10 +17,10 @@ const bountySchema = new mongoose.Schema({
     reward: {
         type: Number,
         min: 1000,
-        max: 1000000000000
+        max: 1000000000
     },
     ship: String,
-    hunters: [String],
+    hunters: [hunterSchema],
     captured: {
         type: Boolean,
         default: false
@@ -26,4 +28,7 @@ const bountySchema = new mongoose.Schema({
     lastSeen: String
 })
 
-module.exports = mongoose.model('bounties', bountySchema)
+module.exports = {
+    Hunter: mongoose.model('bounties', bountySchema),
+    hunterSchema: tk
+}

@@ -6,5 +6,6 @@ mongoose.connect(process.env.MONGO_URI, {
 })
 
 module.exports = {
-    Bounty: require('./Bounty')
+    Bounty: require('./Bounty'),
+    Hunter: require('./Hunter').Hunter
 }
