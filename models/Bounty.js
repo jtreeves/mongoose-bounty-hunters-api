@@ -28,7 +28,4 @@ const bountySchema = new mongoose.Schema({
     lastSeen: String
 })
 
-module.exports = {
-    Hunter: mongoose.model('bounties', bountySchema),
-    hunterSchema: tk
-}
+module.exports = mongoose.model('bounties', bountySchema)

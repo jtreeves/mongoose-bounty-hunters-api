@@ -5,4 +5,7 @@ const hunterSchema = new mongoose.Schema({
     origin: String
 })
 
-module.exports = mongoose.model('hunters', hunterSchema)
+module.exports = {
+    Hunter: mongoose.model('hunters', hunterSchema),
+    hunterSchema
+}
