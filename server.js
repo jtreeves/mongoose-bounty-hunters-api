@@ -1,7 +1,10 @@
 const express = require('express')
 const app = express()
 require('dotenv').config()
+const cors = require('cors')
 
+// Use cors first
+app.use(cors({origin: '*'}))
 // Let it grab body data
 app.use(express.urlencoded())
 // Parse body data as JSON
